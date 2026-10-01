@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="g" gradientTransform="rotate(159 .5 .5)">
+      <stop offset="0" stop-color="#276EF1"/>
+      <stop offset="1" stop-color="#1E54B7"/>
+    </linearGradient>
+    <radialGradient id="spot" cx=".5" cy=".55" r=".5">
+      <stop offset="0" stop-color="#fff" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <circle cx="22" cy="263" r="99" fill="#fff" opacity="0.06"/>
+  <circle cx="188" cy="287" r="36" fill="#fff" opacity="0.10"/>
+  <circle cx="529" cy="79" r="71" fill="#fff" opacity="0.11"/>
+  <circle cx="442" cy="565" r="59" fill="#fff" opacity="0.11"/>
+  <circle cx="272" cy="515" r="62" fill="#fff" opacity="0.05"/>
+  <circle cx="425" cy="478" r="99" fill="#fff" opacity="0.11"/>
+  <circle cx="210" cy="512" r="46" fill="#fff" opacity="0.06"/>
+  <circle cx="416" cy="121" r="44" fill="#fff" opacity="0.06"/>
+  <circle cx="26" cy="387" r="74" fill="#fff" opacity="0.06"/>
+  <circle cx="659" cy="503" r="29" fill="#fff" opacity="0.06"/>
+  <circle cx="352" cy="105" r="43" fill="#fff" opacity="0.11"/>
+  <circle cx="663" cy="208" r="55" fill="#fff" opacity="0.08"/>
+  <circle cx="724" cy="338" r="69" fill="#fff" opacity="0.07"/>
+  <circle cx="614" cy="266" r="29" fill="#fff" opacity="0.07"/>
+  <ellipse cx="400" cy="320" rx="300" ry="230" fill="url(#spot)"/>
+  <g opacity="0.9"><rect x="76" y="76" width="102" height="102" rx="22" fill="#fff" fill-opacity="0.16"/><g transform="translate(90 90) scale(3.0833333333333335)" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0" />
+  <path d="M2 19q2.5 2 5 0t5 0 5 0 5 0" />
+  <path d="M2 5q2.5 2 5 0t5 0 5 0 5 0" /></g></g>
+  <g opacity="0.9"><rect x="596" y="56" width="101" height="101" rx="22" fill="#fff" fill-opacity="0.16"/><g transform="translate(610 70) scale(3.0416666666666665)" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" />
+  <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" /></g></g>
+  <g opacity="0.9"><rect x="66" y="406" width="112" height="112" rx="22" fill="#fff" fill-opacity="0.16"/><g transform="translate(80 420) scale(3.5)" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z" /></g></g>
+  <g opacity="0.9"><rect x="626" y="416" width="96" height="96" rx="22" fill="#fff" fill-opacity="0.16"/><g transform="translate(640 430) scale(2.8333333333333335)" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 4 2.5 2.5" />
+  <path d="M13.5 6.5a4.95 4.95 0 0 0-7 7" />
+  <path d="M15 5 5 15" />
+  <path d="M14 17v.01" />
+  <path d="M10 16v.01" />
+  <path d="M13 13v.01" />
+  <path d="M16 10v.01" />
+  <path d="M11 20v.01" />
+  <path d="M17 14v.01" />
+  <path d="M20 11v.01" /></g></g>
+  <g opacity="0.9"><rect x="346" y="26" width="89" height="89" rx="22" fill="#fff" fill-opacity="0.16"/><g transform="translate(360 40) scale(2.5416666666666665)" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4 8 6" />
+  <path d="M17 19v2" />
+  <path d="M2 12h20" />
+  <path d="M7 19v2" />
+  <path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" /></g></g>
+  <ellipse cx="400" cy="470" rx="150" ry="18" fill="#000" opacity=".18"/>
+  <circle cx="400" cy="300" r="150" fill="#fff"/>
+  <g transform="translate(300 200) scale(8.333333333333334)" fill="none" stroke="#1E54B7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4 8 6" />
+  <path d="M17 19v2" />
+  <path d="M2 12h20" />
+  <path d="M7 19v2" />
+  <path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" /></g>
+</svg>
