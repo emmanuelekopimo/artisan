@@ -1,0 +1,14 @@
+import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
+import * as schema from "./schema";
+
+const url = process.env.DATABASE_URL ?? "postgres://postgres:postgres@localhost:5432/artisan";
+
+// Reuse the client across hot reloads in development.
+const globalForDb = globalThis as unknown as { pg?: ReturnType<typeof postgres> };
+const client = globalForDb.pg ?? postgres(url, { max: 10 });
+if (process.env.NODE_ENV !== "production") globalForDb.pg = client;
+
+export const db = drizzle(client, { schema });
+export type DB = typeof db;
+export { client as pg };

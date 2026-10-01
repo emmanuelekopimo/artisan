@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="g" gradientTransform="rotate(90 .5 .5)">
+      <stop offset="0" stop-color="#FFC043"/>
+      <stop offset="1" stop-color="#C78B00"/>
+    </linearGradient>
+    <radialGradient id="spot" cx=".5" cy=".55" r=".5">
+      <stop offset="0" stop-color="#fff" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <circle cx="529" cy="83" r="90" fill="#fff" opacity="0.05"/>
+  <circle cx="641" cy="378" r="44" fill="#fff" opacity="0.07"/>
+  <circle cx="186" cy="418" r="53" fill="#fff" opacity="0.04"/>
+  <circle cx="608" cy="63" r="51" fill="#fff" opacity="0.11"/>
+  <circle cx="29" cy="417" r="62" fill="#fff" opacity="0.09"/>
+  <circle cx="364" cy="561" r="33" fill="#fff" opacity="0.04"/>
+  <circle cx="569" cy="88" r="100" fill="#fff" opacity="0.06"/>
+  <circle cx="9" cy="234" r="96" fill="#fff" opacity="0.05"/>
+  <circle cx="780" cy="15" r="109" fill="#fff" opacity="0.04"/>
+  <circle cx="144" cy="556" r="25" fill="#fff" opacity="0.10"/>
+  <circle cx="316" cy="229" r="26" fill="#fff" opacity="0.10"/>
+  <circle cx="365" cy="380" r="71" fill="#fff" opacity="0.10"/>
+  <circle cx="668" cy="69" r="66" fill="#fff" opacity="0.05"/>
+  <circle cx="681" cy="201" r="93" fill="#fff" opacity="0.06"/>
+  <ellipse cx="400" cy="320" rx="300" ry="230" fill="url(#spot)"/>
+  <g opacity="0.9"><rect x="76" y="76" width="101" height="101" rx="22" fill="#fff" fill-opacity="0.16"/><g transform="translate(90 90) scale(3.0416666666666665)" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5" />
+  <path d="M15 8V2" />
+  <path d="M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z" />
+  <path d="M9 8V2" /></g></g>
+  <g opacity="0.9"><rect x="596" y="56" width="97" height="97" rx="22" fill="#fff" fill-opacity="0.16"/><g transform="translate(610 70) scale(2.875)" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" />
+  <path d="M9 18h6" />
+  <path d="M10 22h4" /></g></g>
+  <g opacity="0.9"><rect x="66" y="406" width="101" height="101" rx="22" fill="#fff" fill-opacity="0.16"/><g transform="translate(80 420) scale(3.0416666666666665)" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 19a1 1 0 0 1-1-1v-2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a1 1 0 0 1-1 1z" />
+  <path d="M17 21v-2" />
+  <path d="M19 14V6.5a1 1 0 0 0-7 0v11a1 1 0 0 1-7 0V10" />
+  <path d="M21 21v-2" />
+  <path d="M3 5V3" />
+  <path d="M4 10a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2z" />
+  <path d="M7 5V3" /></g></g>
+  <g opacity="0.9"><rect x="626" y="416" width="103" height="103" rx="22" fill="#fff" fill-opacity="0.16"/><g transform="translate(640 430) scale(3.125)" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 7-3 5h4l-3 5" />
+  <path d="M14.856 6H16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.935" />
+  <path d="M22 14v-4" />
+  <path d="M5.14 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2.936" /></g></g>
+  <g opacity="0.9"><rect x="346" y="26" width="94" height="94" rx="22" fill="#fff" fill-opacity="0.16"/><g transform="translate(360 40) scale(2.75)" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" /></g></g>
+  <ellipse cx="400" cy="470" rx="150" ry="18" fill="#000" opacity=".18"/>
+  <circle cx="400" cy="300" r="150" fill="#fff"/>
+  <g transform="translate(300 200) scale(8.333333333333334)" fill="none" stroke="#C78B00" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" /></g>
+</svg>
