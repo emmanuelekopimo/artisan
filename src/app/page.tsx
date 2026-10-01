@@ -15,7 +15,7 @@ export default async function Home() {
           <div>
             <h1>Get it fixed by trusted artisans near you</h1>
             <p className="muted" style={{ fontSize: "1.15rem", maxWidth: 480 }}>
-              Plumbers, electricians, tailors, mechanics and more — every one verified by our team. Pick a trade, choose your area, request a quote.
+              Plumbers, electricians, tailors, mechanics and more, all checked by our team. Pick a trade, choose your area and request a quote.
             </p>
             <form action="/artisans" className="search-card stack" data-testid="hero-search">
               <div className="search-line">
@@ -67,7 +67,7 @@ export default async function Home() {
       <section className="section gray" id="how">
         <div className="container">
           <h2>How Artisan works</h2>
-          <p className="muted">Three simple steps for customers — and a verified storefront for artisans.</p>
+          <p className="muted">Three steps for customers, and a verified storefront for artisans.</p>
           <div className="grid grid-3" style={{ marginTop: 24 }}>
             {[
               ["search", "1. Search", "Filter artisans by trade and area. Every listing has photos of real past work."],

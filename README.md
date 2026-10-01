@@ -2,7 +2,7 @@
 
 **Find trusted artisans near you.** Artisan is a marketplace for plumbers, electricians, tailors, mechanics, carpenters and painters. Artisans register with a trade, an area and photos of past work. Admins verify them, and customers filter by category and location and request a quote. The UI is inspired by the Uber app.
 
-📄 **Full illustrated guide:** [`docs/Artisan-Documentation.pdf`](docs/Artisan-Documentation.pdf)
+**Full illustrated guide:** [`docs/Artisan-Documentation.pdf`](docs/Artisan-Documentation.pdf)
 
 ## Stack
 

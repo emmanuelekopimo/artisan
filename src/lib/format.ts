@@ -1,5 +1,5 @@
 export function naira(amount: number | null | undefined): string {
-  if (amount == null) return "—";
+  if (amount == null) return "N/A";
   return "₦" + amount.toLocaleString("en-NG");
 }
 

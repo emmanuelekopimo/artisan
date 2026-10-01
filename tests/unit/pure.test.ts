@@ -25,7 +25,7 @@ describe("quote state machine", () => {
 describe("formatting", () => {
   it("formats naira", () => {
     expect(naira(15000)).toBe("₦15,000");
-    expect(naira(null)).toBe("—");
+    expect(naira(null)).toBe("N/A");
   });
   it("builds initials", () => expect(initials("tunde  bakare ade")).toBe("TB"));
   it("describes elapsed time", () => {
