@@ -83,10 +83,28 @@ export async function seed(url: string) {
   return { providers: insertedProviders.length, customers: customers.length };
 }
 
+/** True when the catalog has never been loaded (fresh database). */
+export async function isEmpty(url: string) {
+  const client = postgres(url, { max: 1, onnotice: () => {} });
+  const [row] = await client`SELECT count(*)::int AS n FROM categories`;
+  await client.end();
+  return row!.n === 0;
+}
+
 if (process.argv[1]?.endsWith("seed.ts")) {
-  seed(process.env.DATABASE_URL!).then((r) => {
+  const url = process.env.DATABASE_URL!;
+  const onlyIfEmpty = process.argv.includes("--if-empty");
+  (async () => {
+    if (onlyIfEmpty && !(await isEmpty(url))) {
+      console.log("✓ database already has data — skipping seed");
+      return;
+    }
+    const r = await seed(url);
     console.log(`✓ seeded ${r.providers} artisans, ${r.customers} customers, 1 admin`);
     console.log(`  sample password for every account: ${SAMPLE_PASSWORD}`);
+  })().catch((e) => {
+    console.error(e);
+    process.exit(1);
   });
 }
 

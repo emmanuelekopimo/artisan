@@ -46,16 +46,14 @@ Tests expect a Postgres test database at `postgres://postgres:postgres@localhost
 
 ## Deploying to Railway
 
-```bash
-railway login
-railway link                       # pick the "school-projects" project
-railway add --database postgres
-railway variables --set "SESSION_SECRET=$(openssl rand -hex 32)" --set 'DATABASE_URL=${{Postgres.DATABASE_URL}}'
-railway up
-railway run npm run db:seed        # once, to load the sample data
-```
+1. In the Railway project, **New → GitHub Repo** → pick this repo (set the branch under *Settings → Source* if the code isn't on `main`).
+2. **New → Database → PostgreSQL** in the same project.
+3. On the app service, open **Variables** and add:
+   - `DATABASE_URL` = `${{Postgres.DATABASE_URL}}`
+   - `SESSION_SECRET` = any long random string
+4. **Settings → Networking → Generate Domain** to get a public URL.
 
-`railway.json` builds with `npm run build` and runs migrations on every start.
+`railway.json` builds with `npm run build`; every start applies migrations and, on a brand-new database, loads the sample data automatically (it never overwrites existing data).
 
 ## Project layout
 

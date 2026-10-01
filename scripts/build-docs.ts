@@ -473,13 +473,13 @@ npm install
 npm run db:deploy             # create tables + load sample data
 npm run dev                   # http://localhost:3000</pre>
   <h3>Deploy to Railway (project “school-projects”)</h3>
-  <pre>railway login
-railway link                  # choose the "school-projects" project
-railway add --database postgres
-railway variables --set "SESSION_SECRET=$(openssl rand -hex 32)" \\
-                  --set 'DATABASE_URL=\${{Postgres.DATABASE_URL}}'
-railway up                    # builds and deploys using railway.json</pre>
-  <p><span class="mono">railway.json</span> runs <span class="mono">npm run build</span>, then on start applies migrations (<span class="mono">npm run db:migrate</span>) before <span class="mono">npm start</span>. Run <span class="mono">railway run npm run db:seed</span> once to load the sample data.</p>
+  <ol>
+    <li>In the project: <b>New → GitHub Repo</b> → choose this repository (pick the branch under <i>Settings → Source</i> if needed).</li>
+    <li><b>New → Database → PostgreSQL</b>.</li>
+    <li>On the app service add the variables <span class="mono">DATABASE_URL = \${{Postgres.DATABASE_URL}}</span> and <span class="mono">SESSION_SECRET</span> (any long random string).</li>
+    <li><b>Settings → Networking → Generate Domain</b>.</li>
+  </ol>
+  <p><span class="mono">railway.json</span> runs <span class="mono">npm run build</span>; on every start it applies migrations and, on a brand-new database, loads the sample data automatically.</p>
 </section>
 
 <section>
