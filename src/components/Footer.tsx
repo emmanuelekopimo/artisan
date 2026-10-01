@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container grid grid-4">
         <div>
           <div className="brand" style={{ marginBottom: 12 }}><img src="/logo.svg" alt="" width={28} /> Artisan</div>
-          <p>Trusted, verified artisans — one tap away.</p>
+          <p>Verified local artisans, one tap away.</p>
         </div>
         <div className="stack">
           <b style={{ color: "#fff" }}>Customers</b>

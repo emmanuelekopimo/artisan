@@ -64,13 +64,13 @@ async function captureAll() {
   await capture(page, "home", [
     { target: page.locator(".nav-links"), text: "Top navigation: browse artisans, join as an artisan, or read how it works." },
     { target: page.getByLabel("Trade"), text: "Pick a trade (plumber, electrician, tailor, mechanic, carpenter, painter)." },
-    { target: page.getByLabel("Area"), text: "Pick an area in Lagos — only artisans who work there are shown." },
+    { target: page.getByLabel("Area"), text: "Pick an area in Lagos. Only artisans who work there are shown." },
     { target: page.getByRole("button", { name: "See artisans" }), text: "Search. Takes you to the filtered results list." },
     { target: page.locator(".hero-art"), text: "Map-style illustration in the spirit of the Uber app." },
   ]);
   await page.locator("#how").scrollIntoViewIfNeeded();
   await capture(page, "home-full", [
-    { target: page.getByTestId("categories"), text: "‘Suggestions’ tiles — one tap jumps to a trade." },
+    { target: page.getByTestId("categories"), text: "'Suggestions' tiles: one tap jumps to a trade." },
     { target: page.locator("#how"), text: "How it works, in three steps." },
     { target: page.getByTestId("provider-card").first(), text: "Top-rated verified artisans." },
   ], { fullPage: true });
@@ -99,7 +99,7 @@ async function captureAll() {
   await page.goto(`${BASE}/register?role=provider`);
   await capture(page, "register", [
     { target: page.locator(".role-pick"), text: "Choose your role: customer or artisan (service provider)." },
-    { target: page.getByTestId("register-form").locator(".field").first(), text: "Basic account details — passwords are hashed with bcrypt." },
+    { target: page.getByTestId("register-form").locator(".field").first(), text: "Basic account details. Passwords are hashed with bcrypt." },
     { target: page.locator(".auth-side"), text: "Benefits panel changes with the selected role." },
   ]);
   const stamp = Date.now().toString().slice(-5);
@@ -119,8 +119,8 @@ async function captureAll() {
   ]);
   await capture(page, "onboarding", [
     { target: page.getByLabel("Business name"), text: "Business name shown to customers." },
-    { target: page.getByLabel("Trade"), text: "Trade (category) — used by the category filter." },
-    { target: page.getByLabel("Area you work in"), text: "Area — used by the location filter." },
+    { target: page.getByLabel("Trade"), text: "Trade (category), used by the category filter." },
+    { target: page.getByLabel("Area you work in"), text: "Area, used by the location filter." },
     { target: page.getByLabel("About your work"), text: "Short bio describing services." },
     { target: page.getByLabel("Photos of past work"), text: "Upload photos of past work (JPG/PNG/WEBP, max 4 MB each). Stored in Postgres." },
     { target: page.getByRole("button", { name: "Submit for verification" }), text: "Submits the profile to the admin verification queue." },
@@ -139,7 +139,7 @@ async function captureAll() {
   await capture(page, "admin", [
     { target: page.getByTestId("admin-kpis"), text: "Platform stats: pending reviews, verified artisans, customers and quote requests." },
     { target: page.locator(".tabs"), text: "Tabs for Pending / Verified / Rejected artisans." },
-    { target: page.getByTestId("admin-row").filter({ hasText: "Kola Kool Electric" }).locator(".thumbs"), text: "Preview of uploaded work photos — click the name to open the full profile." },
+    { target: page.getByTestId("admin-row").filter({ hasText: "Kola Kool Electric" }).locator(".thumbs"), text: "Preview of uploaded work photos. Click the name to open the full profile." },
     { target: page.getByTestId("admin-row").filter({ hasText: "Kola Kool Electric" }).getByTestId("verify-btn"), text: "Verify: the artisan immediately becomes visible to customers." },
     { target: page.getByTestId("admin-row").filter({ hasText: "Kola Kool Electric" }).getByTestId("reject-btn"), text: "Reject with an optional reason the artisan will see." },
   ]);
@@ -162,7 +162,7 @@ async function captureAll() {
     { target: page.getByLabel("What do you need done?"), text: "Job title." },
     { target: page.getByLabel("Details"), text: "Details so the artisan can price the work." },
     { target: page.getByLabel("Address"), text: "Where the job is." },
-    { target: page.getByRole("button", { name: "Request a quote" }), text: "Sends the request — it appears on both dashboards." },
+    { target: page.getByRole("button", { name: "Request a quote" }), text: "Sends the request. It appears on both dashboards." },
   ]);
   await page.getByRole("button", { name: "Request a quote" }).click();
   await page.getByTestId("flash-ok").waitFor();
@@ -184,8 +184,8 @@ async function captureAll() {
   await capture(page, "artisan-dashboard", [
     { target: page.getByTestId("kpi-new"), text: "Number of new requests waiting for a quote." },
     { target: req.locator("p"), text: "Customer's job description, address and preferred date." },
-    { target: req.getByLabel("Price (₦)"), text: "Enter a price in Naira…" },
-    { target: req.getByRole("button", { name: "Send quote" }), text: "…and send it. Or decline the job." },
+    { target: req.getByLabel("Price (₦)"), text: "Enter a price in Naira." },
+    { target: req.getByRole("button", { name: "Send quote" }), text: "Send the quote, or decline the job." },
   ]);
   await req.getByRole("button", { name: "Send quote" }).click();
   await page.getByTestId("flash-ok").waitFor();
@@ -202,7 +202,7 @@ async function captureAll() {
 
   await page.goto(`${BASE}/login`);
   await capture(page, "login", [
-    { target: page.getByTestId("login-form"), text: "One login for customers, artisans and admins — you land on the right dashboard." },
+    { target: page.getByTestId("login-form"), text: "One login for customers, artisans and admins. Each lands on their own dashboard." },
     { target: page.getByTestId("demo-accounts"), text: "Demo accounts for the presentation." },
   ]);
 
@@ -298,18 +298,18 @@ pre { background: #000; color: #e8e8e8; padding: 10pt 12pt; border-radius: 8px; 
     <p style="color:#afafaf;font-size:13pt;max-width:140mm">A marketplace where plumbers, electricians, tailors and mechanics register with their trade, area and photos of past work. Admins verify them, and customers filter by category and location and request a quote.</p>
   </div>
   <img src="data:image/svg+xml;base64,${hero}"/>
-  <div style="color:#afafaf;font-size:9.5pt">Next.js · TypeScript · Drizzle ORM · PostgreSQL · Railway &nbsp;—&nbsp; ${today}</div>
+  <div style="color:#afafaf;font-size:9.5pt">Next.js · TypeScript · Drizzle ORM · PostgreSQL · Railway &nbsp;|&nbsp; ${today}</div>
 </div>
 
 <section>
   <h2>Contents</h2>
   <ol class="toc">
-    <li>Overview — the problem and the solution</li>
+    <li>Overview: the problem and the solution</li>
     <li>Users and roles</li>
-    <li>Customer guide — search, filter, request a quote, accept</li>
-    <li>Artisan guide — register, upload photos, get verified, send quotes</li>
-    <li>Admin guide — verify or reject artisans</li>
-    <li>How it works inside — architecture, data model, quote lifecycle</li>
+    <li>Customer guide: search, filter, request a quote, accept</li>
+    <li>Artisan guide: register, upload photos, get verified, send quotes</li>
+    <li>Admin guide: verify or reject artisans</li>
+    <li>How it works inside: architecture, data model, quote lifecycle</li>
     <li>Branding and UI</li>
     <li>Testing</li>
     <li>Running locally and deploying to Railway</li>
@@ -323,13 +323,13 @@ pre { background: #000; color: #e8e8e8; padding: 10pt 12pt; border-radius: 8px; 
     <div class="box"><b>Artisans register</b>with their trade, the area they work in, a short bio, a starting price and photos of past work.</div>
     <div class="box"><b>Admins verify</b>every new artisan before they appear in search, so customers only see checked profiles.</div>
     <div class="box"><b>Customers search</b>by category (trade) and location (area), compare ratings, prices and photos.</div>
-    <div class="box"><b>Customers request quotes</b>— the artisan replies with a price, the customer accepts and the job is tracked to completion.</div>
+    <div class="box"><b>Customers request quotes</b>The artisan replies with a price, the customer accepts and the job is tracked to completion.</div>
   </div>
 
   <h2 style="margin-top:18pt">2. Users and roles</h2>
   <table>
     <tr><th>Role</th><th>What they can do</th><th>Demo login</th></tr>
-    <tr><td><b>Guest</b></td><td>Browse and filter verified artisans, view profiles and photos.</td><td>—</td></tr>
+    <tr><td><b>Guest</b></td><td>Browse and filter verified artisans, view profiles and photos.</td><td>None</td></tr>
     <tr><td><b>Customer</b></td><td>Everything a guest can, plus request quotes, accept or decline them, and track jobs.</td><td><span class="mono">customer@artisan.ng</span></td></tr>
     <tr><td><b>Artisan</b> (provider)</td><td>Create a profile (trade, area, bio, price), upload/delete work photos, receive requests, send quotes, decline, mark jobs completed.</td><td><span class="mono">tunde@artisan.ng</span></td></tr>
     <tr><td><b>Admin</b></td><td>See platform stats, review pending artisans, verify or reject them with a reason.</td><td><span class="mono">admin@artisan.ng</span></td></tr>
@@ -339,7 +339,7 @@ pre { background: #000; color: #e8e8e8; padding: 10pt 12pt; border-radius: 8px; 
 
 <section>
   <h2>3. Customer guide</h2>
-  <h3>3.1 Home — start a search</h3>
+  <h3>3.1 Home: start a search</h3>
   ${img("home", "Home page (desktop).")}
 </section>
 <section>
@@ -356,7 +356,7 @@ pre { background: #000; color: #e8e8e8; padding: 10pt 12pt; border-radius: 8px; 
 </section>
 <section>
   <h3>3.5 Track requests and accept a quote</h3>
-  ${img("customer-dashboard", "Customer dashboard — every request with its status.")}
+  ${img("customer-dashboard", "Customer dashboard showing every request and its status.")}
   ${img("accepted", "After accepting a quote.")}
 </section>
 
@@ -378,12 +378,12 @@ pre { background: #000; color: #e8e8e8; padding: 10pt 12pt; border-radius: 8px; 
 <section>
   <h3>4.4 Reply to quote requests</h3>
   ${img("artisan-dashboard", "Artisan dashboard with a new request.")}
-  <p>Once the customer accepts, the artisan sees the customer's phone number and a <b>Mark job completed</b> button, which also increases their “jobs done” count.</p>
+  <p>Once the customer accepts, the artisan sees the customer's phone number and a <b>Mark job completed</b> button, which also increases their "jobs done" count.</p>
 </section>
 
 <section>
   <h2>5. Admin guide</h2>
-  ${img("admin", "Admin console — pending verification queue.")}
+  ${img("admin", "Admin console: pending verification queue.")}
   ${img("admin-verified", "After clicking Verify.", { maxHeight: 330 })}
 </section>
 
@@ -393,7 +393,7 @@ pre { background: #000; color: #e8e8e8; padding: 10pt 12pt; border-radius: 8px; 
   <div class="arch">
     <div><b>Browser</b>Server-rendered HTML + plain HTML forms</div>
     <div><b>Next.js 16</b>App Router pages &amp; Server Actions (TypeScript)</div>
-    <div><b>Service layer</b>src/lib/services — business rules, validation (Zod)</div>
+    <div><b>Service layer</b>src/lib/services: business rules, validation (Zod)</div>
     <div><b>PostgreSQL</b>via Drizzle ORM (schema + migrations)</div>
   </div>
   <p>Pages are React Server Components that query the database directly through the service layer. Every form posts to a <b>Server Action</b> which checks the user's session and role, validates input with <b>Zod</b>, calls a service function and redirects back with a success or error message. No client-side JavaScript is needed for any feature.</p>
@@ -409,29 +409,29 @@ pre { background: #000; color: #e8e8e8; padding: 10pt 12pt; border-radius: 8px; 
   <table>
     <tr><th>Table</th><th>Key columns</th></tr>
     <tr><td>users</td><td>id, name, email (unique), password_hash, role (customer | provider | admin), phone</td></tr>
-    <tr><td>categories</td><td>id, slug, name, icon, description — the 6 trades</td></tr>
-    <tr><td>areas</td><td>id, slug, name, city — the 8 Lagos areas</td></tr>
+    <tr><td>categories</td><td>id, slug, name, icon, description (the 6 trades)</td></tr>
+    <tr><td>areas</td><td>id, slug, name, city (the 8 Lagos areas)</td></tr>
     <tr><td>providers</td><td>user_id → users, category_id, area_id, business_name, bio, years_experience, starting_price, status (pending | verified | rejected), rating, jobs_completed, rejection_reason</td></tr>
     <tr><td>work_photos</td><td>provider_id → providers, url, caption</td></tr>
-    <tr><td>uploads</td><td>id, mime, data (bytea) — raw uploaded images</td></tr>
+    <tr><td>uploads</td><td>id, mime, data (bytea), the raw uploaded images</td></tr>
     <tr><td>quote_requests</td><td>customer_id, provider_id, title, details, address, preferred_date, status, quoted_price, provider_note</td></tr>
   </table>
 
   <h3>6.3 Quote lifecycle</h3>
-  <div class="flow"><span class="step">pending</span><span class="arrow">— artisan sends price →</span><span class="step">quoted</span><span class="arrow">— customer accepts →</span><span class="step">accepted</span><span class="arrow">— artisan →</span><span class="step">completed</span></div>
-  <div class="flow"><span class="step alt">pending / quoted</span><span class="arrow">— artisan or customer declines →</span><span class="step alt">declined</span></div>
+  <div class="flow"><span class="step">pending</span><span class="arrow">artisan sends price →</span><span class="step">quoted</span><span class="arrow">customer accepts →</span><span class="step">accepted</span><span class="arrow">artisan →</span><span class="step">completed</span></div>
+  <div class="flow"><span class="step alt">pending / quoted</span><span class="arrow">artisan or customer declines →</span><span class="step alt">declined</span></div>
   <p>The allowed moves live in one table in <span class="mono">src/lib/quote-status.ts</span>; any other move (or the wrong person trying it) is refused.</p>
 
   <h3>6.4 Artisan verification</h3>
-  <div class="flow"><span class="step alt">register</span><span class="arrow">→</span><span class="step">pending</span><span class="arrow">— admin →</span><span class="step">verified</span><span class="arrow">or</span><span class="step alt">rejected</span><span class="arrow">— edit profile →</span><span class="step">pending</span></div>
+  <div class="flow"><span class="step alt">register</span><span class="arrow">→</span><span class="step">pending</span><span class="arrow">admin →</span><span class="step">verified</span><span class="arrow">or</span><span class="step alt">rejected</span><span class="arrow">edit profile →</span><span class="step">pending</span></div>
 </section>
 
 <section>
   <h2>7. Branding and UI</h2>
   <div class="grid2">
     <div>
-      <p><b>Name:</b> Artisan. <b>Logo:</b> a bold geometric “A” (like a roof or a compass) on a black tile, with a green dot standing for a verified pin on the map.</p>
-      <p><b>Inspired by Uber:</b> black navigation bar, black-and-white palette, big bold headings, grey input fields with icons, “Suggestions” tiles for categories, pill buttons and a map-style hero.</p>
+      <p><b>Name:</b> Artisan. <b>Logo:</b> a bold geometric "A" (like a roof or a compass) on a black tile, with a green dot standing for a verified pin on the map.</p>
+      <p><b>Inspired by Uber:</b> black navigation bar, black-and-white palette, big bold headings, grey input fields with icons, "Suggestions" tiles for categories, pill buttons and a map-style hero.</p>
       <table>
         <tr><th>Token</th><th>Value</th></tr>
         <tr><td>Primary</td><td>#000000 / #FFFFFF</td></tr>
@@ -440,12 +440,12 @@ pre { background: #000; color: #e8e8e8; padding: 10pt 12pt; border-radius: 8px; 
         <tr><td>Info / link</td><td>#276EF1</td></tr>
         <tr><td>Font</td><td>Inter (self-hosted)</td></tr>
         <tr><td>Icons</td><td>Lucide</td></tr>
-        <tr><td>Avatars</td><td>DiceBear “Notionists”</td></tr>
+        <tr><td>Avatars</td><td>DiceBear "Notionists"</td></tr>
       </table>
     </div>
     <div class="phones">
-      ${img("mobile-home", "Mobile — home")}
-      ${img("mobile-browse", "Mobile — browse")}
+      ${img("mobile-home", "Mobile: home")}
+      ${img("mobile-browse", "Mobile: browse")}
     </div>
   </div>
 </section>
@@ -472,7 +472,7 @@ npm run build && npm run test:e2e   # end-to-end in a real browser (Playwright)<
 npm install
 npm run db:deploy             # create tables + load sample data
 npm run dev                   # http://localhost:3000</pre>
-  <h3>Deploy to Railway (project “school-projects”)</h3>
+  <h3>Deploy to Railway (project "school-projects")</h3>
   <ol>
     <li>In the project: <b>New → GitHub Repo</b> → choose this repository (pick the branch under <i>Settings → Source</i> if needed).</li>
     <li><b>New → Database → PostgreSQL</b>.</li>
@@ -486,14 +486,14 @@ npm run dev                   # http://localhost:3000</pre>
   <h2>10. 5-minute presentation script</h2>
   <table>
     <tr><th style="width:18%">Time</th><th>What to show and say</th></tr>
-    <tr><td>0:00 – 0:30</td><td><b>Problem.</b> “Finding a trustworthy artisan relies on word of mouth — you can't see their work or compare prices.”</td></tr>
-    <tr><td>0:30 – 1:30</td><td><b>Customer search.</b> Home page → pick <i>Plumbers</i> + <i>Yaba</i> → See artisans. Show chips, area filter, sort and the Verified badges. Open <i>Bakare Plumbing Works</i> — photos, rating, starting price.</td></tr>
-    <tr><td>1:30 – 2:30</td><td><b>Artisan onboarding.</b> Sign up as an artisan → choose trade and area → upload a photo → submit. Point out the <i>Pending verification</i> banner and that they're hidden from search.</td></tr>
-    <tr><td>2:30 – 3:15</td><td><b>Admin.</b> Log in as <span class="mono">admin@artisan.ng</span> → Pending tab → Verify. The artisan is now searchable.</td></tr>
-    <tr><td>3:15 – 4:15</td><td><b>Quote flow.</b> As <span class="mono">customer@artisan.ng</span> request a quote → as the artisan send ₦ price → as the customer accept. Show the progress bar.</td></tr>
-    <tr><td>4:15 – 5:00</td><td><b>Tech.</b> Next.js + TypeScript, Drizzle + PostgreSQL, Server Actions, role-based access, 35 automated tests, deployed on Railway. Questions.</td></tr>
+    <tr><td>0:00 to 0:30</td><td><b>Problem.</b> "Finding a trustworthy artisan relies on word of mouth. You can't see their work or compare prices."</td></tr>
+    <tr><td>0:30 to 1:30</td><td><b>Customer search.</b> Home page → pick <i>Plumbers</i> + <i>Yaba</i> → See artisans. Show chips, area filter, sort and the Verified badges. Open <i>Bakare Plumbing Works</i> to show photos, rating and starting price.</td></tr>
+    <tr><td>1:30 to 2:30</td><td><b>Artisan onboarding.</b> Sign up as an artisan → choose trade and area → upload a photo → submit. Point out the <i>Pending verification</i> banner and that they're hidden from search.</td></tr>
+    <tr><td>2:30 to 3:15</td><td><b>Admin.</b> Log in as <span class="mono">admin@artisan.ng</span> → Pending tab → Verify. The artisan is now searchable.</td></tr>
+    <tr><td>3:15 to 4:15</td><td><b>Quote flow.</b> As <span class="mono">customer@artisan.ng</span> request a quote → as the artisan send ₦ price → as the customer accept. Show the progress bar.</td></tr>
+    <tr><td>4:15 to 5:00</td><td><b>Tech.</b> Next.js + TypeScript, Drizzle + PostgreSQL, Server Actions, role-based access, 35 automated tests, deployed on Railway. Questions.</td></tr>
   </table>
-  <div class="callout">Tip: open four browser windows in advance (guest, customer, artisan, admin — use private windows) so you can switch roles without logging in and out.</div>
+  <div class="callout">Tip: open four browser windows in advance (guest, customer, artisan, admin; use private windows) so you can switch roles without logging in and out.</div>
 </section>
 
 </body></html>`;
@@ -516,7 +516,7 @@ async function main() {
     printBackground: true,
     displayHeaderFooter: true,
     headerTemplate: "<span></span>",
-    footerTemplate: `<div style="font-family:Inter,sans-serif;font-size:8px;color:#999;width:100%;padding:0 14mm;display:flex;justify-content:space-between"><span>Artisan — Documentation</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
+    footerTemplate: `<div style="font-family:Inter,sans-serif;font-size:8px;color:#999;width:100%;padding:0 14mm;display:flex;justify-content:space-between"><span>Artisan Documentation</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>`,
   });
   await browser.close();
   console.log(`✓ wrote ${path.relative(process.cwd(), pdf)}`);

@@ -11,7 +11,7 @@ import { ProviderBadge, QuoteBadge } from "@/components/StatusBadge";
 import { Flash, one, type PageSearchParams } from "@/components/Flash";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Dashboard — Artisan" };
+export const metadata = { title: "Dashboard | Artisan" };
 
 const STEPS = ["pending", "quoted", "accepted", "completed"];
 function Progress({ status }: { status: string }) {
@@ -72,7 +72,7 @@ async function CustomerDashboard({ userId, name, flash }: { userId: number; name
             {q.quotedPrice != null && (
               <div className="card flat" style={{ marginTop: 12, padding: 14 }}>
                 <div className="row spread"><span className="small muted">Quoted price</span><span className="price" data-testid="quoted-price">{naira(q.quotedPrice)}</span></div>
-                {q.providerNote && <div className="small">“{q.providerNote}”</div>}
+                {q.providerNote && <div className="small">&quot;{q.providerNote}&quot;</div>}
               </div>
             )}
             {q.status === "quoted" && (
@@ -145,7 +145,7 @@ async function ProviderDashboard({ userId, name, flash }: { userId: number; name
                 <form action={sendQuoteAction} className="row wrap" style={{ flex: 1, alignItems: "flex-end" }} data-testid="send-quote-form">
                   <input type="hidden" name="quoteId" value={q.id} />
                   <div style={{ width: 160 }}><label htmlFor={`price-${q.id}`}>Price (₦)</label><input id={`price-${q.id}`} name="price" type="number" min={1} className="input" required /></div>
-                  <div style={{ flex: 1, minWidth: 200 }}><label htmlFor={`note-${q.id}`}>Note to customer</label><input id={`note-${q.id}`} name="note" className="input" placeholder="What's included, when you can come…" /></div>
+                  <div style={{ flex: 1, minWidth: 200 }}><label htmlFor={`note-${q.id}`}>Note to customer</label><input id={`note-${q.id}`} name="note" className="input" placeholder="What's included and when you can come" /></div>
                   <button className="btn">Send quote</button>
                 </form>
                 <form action={declineRequestAction}><input type="hidden" name="quoteId" value={q.id} /><button className="btn danger">Decline</button></form>

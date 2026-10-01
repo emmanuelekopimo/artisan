@@ -5,7 +5,7 @@ import { getSession, homeFor } from "@/lib/session";
 import { AuthSide } from "@/components/AuthSide";
 import { Flash, one, type PageSearchParams } from "@/components/Flash";
 
-export const metadata = { title: "Log in — Artisan" };
+export const metadata = { title: "Log in | Artisan" };
 
 export default async function Login({ searchParams }: { searchParams: PageSearchParams }) {
   const session = await getSession();

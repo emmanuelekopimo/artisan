@@ -7,7 +7,7 @@ import { ProviderCard } from "@/components/ProviderCard";
 import { one, type PageSearchParams } from "@/components/Flash";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Find an artisan — Artisan" };
+export const metadata = { title: "Find an artisan | Artisan" };
 
 export default async function Browse({ searchParams }: { searchParams: PageSearchParams }) {
   const sp = await searchParams;

@@ -19,7 +19,7 @@ export async function requestQuoteAction(fd: FormData) {
 export async function acceptQuoteAction(fd: FormData) {
   const session = await requireRole("customer");
   await attempt("/dashboard", () => customerAccept(session.userId, Number(str(fd, "quoteId"))));
-  redirect(withMessage("/dashboard", "ok", "Quote accepted — the artisan will contact you to schedule the job."));
+  redirect(withMessage("/dashboard", "ok", "Quote accepted. The artisan will contact you to schedule the job."));
 }
 
 export async function declineQuoteAction(fd: FormData) {

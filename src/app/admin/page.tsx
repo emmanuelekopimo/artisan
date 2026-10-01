@@ -8,7 +8,7 @@ import { ProviderBadge } from "@/components/StatusBadge";
 import { Flash, one, type PageSearchParams } from "@/components/Flash";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Admin — Artisan" };
+export const metadata = { title: "Admin | Artisan" };
 
 const TABS = [
   ["pending", "Pending"],

@@ -7,7 +7,7 @@ import { ProviderBadge } from "@/components/StatusBadge";
 import { Flash, one, type PageSearchParams } from "@/components/Flash";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "My artisan profile — Artisan" };
+export const metadata = { title: "My artisan profile | Artisan" };
 
 export default async function ProfilePage({ searchParams }: { searchParams: PageSearchParams }) {
   const session = await requireRole("provider");

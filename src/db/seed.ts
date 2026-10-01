@@ -47,7 +47,7 @@ export async function seed(url: string) {
         status: p.status,
         rating: p.rating,
         jobsCompleted: p.jobs,
-        rejectionReason: p.status === "rejected" ? "Work photos were unclear — please upload clearer pictures of finished jobs." : null,
+        rejectionReason: p.status === "rejected" ? "Work photos were unclear. Please upload clearer pictures of finished jobs." : null,
         verifiedAt: p.status === "verified" ? new Date(createdAt.getTime() + 2 * day) : null,
         createdAt,
       })
@@ -75,7 +75,7 @@ export async function seed(url: string) {
     { customerId: amaka.id, providerId: byEmail("emeka@artisan.ng").id, title: "Install 3.5kVA inverter", details: "I bought the inverter and 2 batteries. Need installation and changeover.", address: "Allen Avenue, Ikeja", status: "accepted", quotedPrice: 35000, providerNote: "Price covers cabling and changeover switch.", createdAt: ago(6), updatedAt: ago(4) },
     { customerId: amaka.id, providerId: byEmail("yusuf@artisan.ng").id, title: "Car AC not cooling", details: "Toyota Corolla 2012, AC blows warm air.", address: "Ikeja GRA", status: "completed", quotedPrice: 25000, providerNote: "Re-gas and compressor check.", createdAt: ago(20), updatedAt: ago(15) },
     { customerId: david.id, providerId: byEmail("tunde@artisan.ng").id, title: "Install new water heater", details: "Replace old 30L heater in the master bathroom.", address: "Akoka, Yaba", status: "pending", createdAt: ago(0.5), updatedAt: ago(0.5) },
-    { customerId: fatima.id, providerId: byEmail("tunde@artisan.ng").id, title: "Blocked toilet", details: "Toilet in guest bathroom is blocked.", address: "Sabo, Yaba", status: "completed", quotedPrice: 8000, providerNote: "Done — thanks!", createdAt: ago(12), updatedAt: ago(11) },
+    { customerId: fatima.id, providerId: byEmail("tunde@artisan.ng").id, title: "Blocked toilet", details: "Toilet in guest bathroom is blocked.", address: "Sabo, Yaba", status: "completed", quotedPrice: 8000, providerNote: "Done, thanks!", createdAt: ago(12), updatedAt: ago(11) },
     { customerId: david.id, providerId: byEmail("bola@artisan.ng").id, title: "Built-in wardrobe", details: "Two-door wardrobe with sliding doors, 2.4m wide.", address: "Onike, Yaba", status: "declined", quotedPrice: 450000, providerNote: "Price includes Mahogany wood.", createdAt: ago(9), updatedAt: ago(7) },
   ]);
 
@@ -96,7 +96,7 @@ if (process.argv[1]?.endsWith("seed.ts")) {
   const onlyIfEmpty = process.argv.includes("--if-empty");
   (async () => {
     if (onlyIfEmpty && !(await isEmpty(url))) {
-      console.log("✓ database already has data — skipping seed");
+      console.log("✓ database already has data, skipping seed");
       return;
     }
     const r = await seed(url);
